@@ -48,12 +48,12 @@ export default function Page({ params }: { params: { coder: number }}) {
                 </div>
                 <div className="container5">
                     <p>
-                        Place Stop Button Here
+                       <div className="button1">Start</div>
                     </p>
                 </div>
                 <div className="container6">
                     <p>
-                        Place Run Button Here
+                    <div className="button2">Stop</div>
                     </p>
                 </div>
 
