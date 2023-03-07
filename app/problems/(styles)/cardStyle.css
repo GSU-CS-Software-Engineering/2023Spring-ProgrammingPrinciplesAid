@@ -1,12 +1,12 @@
 body {
 
-    background-color: dimgrey;
+    background-color: #132257;
 }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
    
 }
 
@@ -17,9 +17,24 @@ body {
     border-radius: .5em;
     padding: 10px;
     cursor: move;
+    width: 50rem;
     
 }
-h1 {text-align: center;}
+h1 {text-align: center;
+color: white    ;}
 
 
 p1{text-align:center;}
+.card{
+    width:20rem;
+    height: 10rem;
+}
+.cardbody{
+    text-align: center;
+    position: fixed;
+}
+.link{
+    position: fixed;
+    bottom:.1;
+    
+}

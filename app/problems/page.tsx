@@ -24,7 +24,9 @@ export default function Home() {
     return (
         <main>
             <h1>
+               
                 Programming Principles Tool
+                
             </h1>
 
             <div className="container">

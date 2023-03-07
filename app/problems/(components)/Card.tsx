@@ -12,24 +12,28 @@ interface propsType {
 
 function Card(props: propsType) {
     return (
-        <div className="card">
-            <div className="card-body">
-                <p>
-                  {props.problemId}.  {props.name}
-                </p>
-                <p></p>
-                <div className = "p1">
-                  <p> {props.prompt}</p>
-                </div>
+    <div className = "card-columns">
+        <div className = "card-deck">
+            <div className="card">
+                <div className="card-body">
+                    <p>
+                    {props.problemId}.  {props.name}
+                    </p>
+                    <p></p>
+                    <div className = "p1">
+                    <p> {props.prompt}</p>
+                    </div>
 
-                <div>
-                    <ul>
-                        <Link href={`/problems/${props.problemId}`}> Problem {props.problemId}</Link><br/>
-                        <br/>
-                    </ul>
+                    <div className="link">
+                        <ul>
+                            <Link href={`/problems/${props.problemId}`}> Problem {props.problemId}</Link><br/>
+                        
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
     )
 }
 

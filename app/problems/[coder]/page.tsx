@@ -5,7 +5,11 @@ import "./(styles)/codeStyle.css"
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {CardResponseType} from "@/common/types/CardResponseType";
+import DraggableComponents from './(components)/index.js'
 
+import Draggable from 'react-draggable';
+import React from 'react'
+  
 export default function Page({ params }: { params: { coder: number }}) {
     const [problem, setProblem] = useState<CardResponseType>();
 
@@ -29,31 +33,55 @@ export default function Page({ params }: { params: { coder: number }}) {
 
                 <div className="problemBox">
                     <p>
-                        {problem?.prompt}<br></br>
+                        {problem?.prompt}
+                        <p></p>
                         <a href="/problems">Problem Page</a>
+
                     </p>
                 </div>
                 <div className="container1">
+                <br></br>
+                    <div>
+    
+                <Draggable>
+                   <div className="draggable-item1">
+                        <p>Block1</p>
+                   </div>
+                   
+                </Draggable>
+                <Draggable>
+                   <div className="draggable-item2">
+                        <p>Block2</p>
+                   </div>
+                   
+                </Draggable>
+                <Draggable>
+                   <div className="draggable-item3">
+                        <p>Block3</p>
+                   </div>
+                   
+                </Draggable>
+                </div>
+                    
                 </div>
                 <div className="container2">
                 </div>
-                <div className="container3">
-                
+                <div className="inventoryHeader">
+                    <header>Inventory:</header>
+                    
                     
                 </div>
-                <div className="container4">
-                    <p>
-                        Sand Box
-                    </p>
+                <div className="workSpaceHeader">
+                    <header>Work Space:</header>
                 </div>
                 <div className="container5">
                     <p>
-                       <div className="button1">Start</div>
+                       <div className="button1">Run</div>
                     </p>
                 </div>
                 <div className="container6">
                     <p>
-                    <div className="button2">Stop</div>
+                    <div className="button2">Clear</div>
                     </p>
                 </div>
 
