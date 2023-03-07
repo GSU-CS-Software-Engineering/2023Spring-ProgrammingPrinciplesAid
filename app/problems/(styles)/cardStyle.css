@@ -20,8 +20,11 @@ body {
     width: 50rem;
     
 }
-h1 {text-align: center;
-color: white    ;}
+h1 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
 
 
 p1{text-align:center;}
@@ -37,4 +40,17 @@ p1{text-align:center;}
     position: fixed;
     bottom:.1;
     
+}
+.home-container {
+    margin: auto; 
+    width: 50%; 
+    display: block; 
+    padding: auto;
+    text-align: center;
+}
+.h2{
+    text-align: center;
+    color:white;
+    font-size: 10; 
+    font-weight: 10
 }

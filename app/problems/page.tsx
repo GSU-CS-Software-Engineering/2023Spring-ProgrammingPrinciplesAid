@@ -23,12 +23,10 @@ export default function Home() {
 
     return (
         <main>
-            <h1>
-               
-                Programming Principles Tool
-                
-            </h1>
-
+            <div className='home-containter'>
+                <h1 className="title has-text-left p-2">Welcome to the Program Repair tool!</h1>
+                <h2 className="h2">Please click on a problem below to be taken to a page where you can attempt to solve it.</h2>
+            </div>
             <div className="container">
                 {cardResponse !== undefined && cardResponse.map((data, index: number) => {
                     return (

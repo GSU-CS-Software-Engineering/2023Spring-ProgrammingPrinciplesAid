@@ -33,7 +33,8 @@ export default function Page({ params }: { params: { coder: number }}) {
 
                 <div className="problemBox">
                     <p>
-                        {problem?.prompt}
+                        <p>Description:  {problem?.prompt}</p>
+                       
                         <p></p>
                         <a href="/problems">Problem Page</a>
 
@@ -84,6 +85,7 @@ export default function Page({ params }: { params: { coder: number }}) {
                     <div className="button2">Clear</div>
                     </p>
                 </div>
+              
 
 
                 <a href="index.html">
