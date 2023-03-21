@@ -4,7 +4,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const {problemId} = req.query;
 
     const blockList: string[] = ["int x = ", "String x = ", "double x =", "System.out.println(x)", "for(x = ; x < ; x ){", "}", "public static void Main(String[] args){"]
-
+    //Storgae of Problems
+    //Format problemID: ID for each problem, Name,promt, number:for display purposes, code: will expand to have specific problems to have specific blocks, answer
     if (typeof problemId === "string") {
         const problems: any = [{
             "problemId": 1,

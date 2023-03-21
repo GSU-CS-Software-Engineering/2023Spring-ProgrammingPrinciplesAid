@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-
+//API that is used to fill cards on our front page problems/page.tsx
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse,
