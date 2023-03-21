@@ -3,4 +3,6 @@ export interface CardResponseType {
     name: string,
     prompt: string,
     number: number,
+    code: string[],
+    answer: string
 }
