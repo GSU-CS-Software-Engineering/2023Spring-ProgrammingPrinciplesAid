@@ -9,7 +9,7 @@ export default function Home() {
     <main className={"text-blue-50"}>
       <h1> This is a Programming Tool </h1>
       <a href="/problems">Problem Page</a><br></br>
-      <a href="app\index.js">demo</a>
+  
     </main>
   )
 }

@@ -17,7 +17,7 @@ import theme from "../theme";
 //Loads blocks into array, need to find way to load from server
 const initialData = {
     tasks: {
-        1: {id: 1, content: "String x = xyz;"},
+        1: {id: 1, content: "String x = ;"},
         2: {id: 2, content: "Int x = 1;"},
         3: {id: 3, content: "double x = 1.0;"},
         4: {id: 4, content: "public static void Main(String[] args)"},

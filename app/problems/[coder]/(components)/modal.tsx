@@ -1,3 +1,4 @@
+import { background } from '@chakra-ui/react';
 import React, { ReactNode } from 'react';
 import Modal from 'react-modal';
 
@@ -19,7 +20,8 @@ const customStyles = {
     height: '25%',
     transform: 'translate(-50%, -50%)',
     padding: '2rem',
-    borderRadius: '0.5rem'
+    borderRadius: '0.5rem',
+    backgroundColor: 'white'
   }
 };
 
