@@ -9,18 +9,19 @@ import React from 'react'
 import {DragDropContext} from "react-beautiful-dnd";
 import {Flex, Heading, Text} from "@chakra-ui/react";
 import Column from "@/app/problems/[coder]/(components)/column";
-
+import ModalComponent from '@/app/problems/[coder]/(components)/modal';
 
 import {ChakraProvider} from "@chakra-ui/provider";
 import theme from "../theme";
 
+//Loads blocks into array, need to find way to load from server
 const initialData = {
     tasks: {
         1: {id: 1, content: "String x = xyz;"},
         2: {id: 2, content: "Int x = 1;"},
         3: {id: 3, content: "double x = 1.0;"},
-        4: {id: 4, content: "public static void Main(String[] args){"},
-        5: {id: 5, content: "}"},
+        4: {id: 4, content: "public static void Main(String[] args)"},
+        5: {id: 5, content: "While()"},
         6: {id: 6, content: "System.out.Print(x);"},
     },
     columns: {
@@ -38,11 +39,14 @@ const initialData = {
     },
     // Facilitate reordering of the columns
     columnOrder: [1, 2],
+
 };
+
 
 export default function Page({params}: { params: { coder: number } }) {
     const [problem, setProblem] = useState<CardResponseType>();
     const [state, setState] = useState<any>(initialData);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         getProblemInfo();
@@ -53,7 +57,19 @@ export default function Page({params}: { params: { coder: number } }) {
             setProblem(response.data);
         })
     }
+    const openModal = () => {
+        setIsModalOpen(true);
+      };
+    
+    const closeModal = () => {
+        setIsModalOpen(false);
+      };
 
+    const refresh = () =>{
+        window.location.reload();
+    }
+    /*
+    This might be implemented in the future just for testing atm
     const getTasks = () => {
         let newTasks: any = [];
         newTasks.push(state.tasks[1]);
@@ -63,7 +79,7 @@ export default function Page({params}: { params: { coder: number } }) {
 
         return newTasks;
     }
-
+    */
     const onDragEnd = (result: any) => {
         const {destination, source} = result;
 
@@ -140,9 +156,10 @@ export default function Page({params}: { params: { coder: number } }) {
         return newColumn;
     };
 
+    //html code
     return (
     <ChakraProvider theme={theme}>
-   
+
         <DragDropContext onDragEnd={onDragEnd}>
             <Flex
                 flexDir="column"
@@ -177,11 +194,27 @@ export default function Page({params}: { params: { coder: number } }) {
                 </Flex>
             </Flex>
             <div className="container6">
-                <button className = "button1"></button>
+                <div className ="button1">
+                    <button onClick={openModal}><p className="subtle">Run</p></button>
+                    <ModalComponent isOpen={isModalOpen} onRequestClose={closeModal}>
+                        <div className="modalHeader"><h2>Output:</h2></div>
+
+                        <div className = "modalTextAnswer"><p>Incorrect output != {problem?.answer}</p></div>
+                        <div className = 'modalTextEscape'><button onClick={closeModal}>Return to Editor</button></div>
+                    
+                    </ModalComponent>
+                </div>
+                <div className ="button2">
+
+           
+                <button onClick={refresh}><p className = "subtle">Refresh</p></button>
+
+                </div>
             </div>
         </DragDropContext>
     
     </ChakraProvider>
 
 );
+            
 }
