@@ -1,68 +1,14 @@
 body {
     background-color: #132257;
 }
-
-.problemBox {
-    width: 100%;
-    height: 100%;
-    border: 3px solid #666;
-    background-color: #9e8d8d;
-    border-radius: .5em;
-    padding: 10px;
-    cursor: move;
-    color: white;
-    border: 3px solid black;
-}
-
-.container1{
-    background-color:gray;
-    width: 15%; height:78%; margin:0 auto;
-    position:absolute; bottom:0;
-    background-size: 200px  100%;
-    border: 5px solid black;
-    z-index: 1000;
-    
-}
-.container2{
-    background-color:gray;
-    width: 85%; height:78%; margin:0 auto;
-    position:absolute; right:1px; bottom:0;
-    background-size: 200px  100%;
-    border: 5px solid black;
-    z-index: 950;
-}
-.inventoryHeader{
-    background-color:gray;
-    width: 15%; height:5%; margin:0 auto;
-    position:absolute;
-    background-size: 200px  100%;
-    border: 5px solid black;
-    color:white
-}
-.workSpaceHeader{
-    background-color:gray;
-    width: 85%; height:5%; margin:0 auto;
-    position:absolute; right:1px;
-    background-size: 200px  100%;
-    border: 5px solid black;
-    color:white
-}
-.container5{
-    background-color:gray;
-    width: 30%; height: 10%; margin: auto;
-    position:absolute; right:.0001%; bottom:0;
-    background-size: 200px  100%;
-    border: 5px solid black;
-    color:white;
-    z-index:1000;
-}
+ 
 .container6{
-    background-color:gray;
-    width: 30%; height: 10%; margin: auto;
-    position:absolute; right:30%; bottom:0;
+    background-color:rgb(28, 32, 32);
+    width: 50%; height: 10%; margin: auto;
+    position:absolute; right:25%; bottom:0;
     background-size: 200px  100%;
-    border: 5px solid black;
-    color:white;
+    border: 3px solid black;
+    color:rgb(47, 28, 155);
     z-index:1000;
 }
 .home{
@@ -86,53 +32,36 @@ body {
     touch-action: none;
     user-select: none;
   }
-  .button1{
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+  
+  .button1 {
+    background-color: white; 
+    color: black; 
+    padding: 28px 56px;
     font-size: 16px;
     margin: 4px 2px;
-    cursor: pointer;
+    border: 2px solid #4CAF50;
+    position: absolute;
+    left: 1px;
   }
   .button1:hover {
-  background-color: #4CAF50;
-  color: white;
-}
-  .button2{
-    border: none;
+    background-color: #4CAF50;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+  }
+  .button2 {
+    background-color: white; 
+    color: black; 
+    padding: 28px 56px;
     font-size: 16px;
     margin: 4px 2px;
-    cursor: pointer;
+    border: 2px solid red;
+    position: absolute;
+    right: 1px;
   }
   .button2:hover {
-    background-color: lightcoral;
+    background-color: red;
     color: white;
   }
-  
-  .button3{
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-  .button3:hover {
-    background-color: lightblue;
-    color: white;
-  }
-  .text-2xl{
+   .text-2xl{
     color:white;
   }
   .header{
@@ -213,6 +142,66 @@ body {
   margin: 1%;
   padding: 1%;
 }
+.btn{
+  padding: 10px 60px;
+  background: #fff;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: 30px;
+}
+.popup{
+  width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%,-50%) scale(1);
+
+}
+
+.modalHeader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.modalTextAnswer{
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.modalTextEscape{
+  border-radius: 12px;
+  background-color: #132257;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  width: 75%;
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
+
 
 
 

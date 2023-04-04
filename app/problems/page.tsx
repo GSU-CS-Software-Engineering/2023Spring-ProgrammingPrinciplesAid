@@ -8,7 +8,9 @@ import {useState, useEffect} from "react";
 import {CardResponseType} from "@/common/types/CardResponseType";
 import axios from "axios";
 
+
 export default function Home() {
+    // This block of code essentially pulls the information from the api and gets teh information form the cardResponseType interface
     const [cardResponse, setCardResponse] = useState<CardResponseType[]>();
 
     useEffect(() => {
@@ -21,12 +23,14 @@ export default function Home() {
         })
     }
 
+    //line 35 creates a card for each entry in pages/hello.ts this is how we fill our conatiner with cards
     return (
         <main>
             <div className='home-containter'>
                 <h1 className="title has-text-left p-2">Welcome to the Program Repair tool!</h1>
                 <h2 className="h2">Please click on a problem below to be taken to a page where you can attempt to solve it.</h2>
             </div>
+            
             <div className="container">
                 {cardResponse !== undefined && cardResponse.map((data, index: number) => {
                     return (
@@ -35,7 +39,9 @@ export default function Home() {
                         </div>)
                 })}
 
+
             </div>
+            
 
 
         </main>
