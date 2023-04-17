@@ -18,22 +18,22 @@ import theme from "../theme";
 //Loads blocks into array, need to find way to load from server
 const initialData = {
     tasks: {
-        1: {id: 1, content: "String x = hello;"},
-        2: {id: 2, content: "int x = 4;"},
-        3: {id: 3, content: "double x = 12"},
-        4: {id: 4, content: "For(int i = 10; i < x;i++)"},
-        5: {id: 5, content: "While()"},
-        6: {id: 6, content: "System.out.println(x);"},
+        1: {id: '1', content: "String x = \"hello\";"},
+        2: {id: '2', content: "int x = 4;"},
+        3: {id: '3', content: "x = 12"},
+        4: {id: '4', content: "for (int i = 0; i < 5; i++ ) {"},
+        5: {id: '5', content: "}"},
+        6: {id: '6', content: "System.out.println(x);"},
 
     },
     columns: {
         1: {
-            id: 1,
+            id: '1',
             title: "Code Bank",
-            taskIds: [1, 2, 3, 4, 5, 6],
+            taskIds: ['1', '2', '3', '4', '5', '6'],
         },
         2: {
-            id: 2,
+            id: '2',
             title: "WorkSpace",
             taskIds: [],
         },
@@ -63,11 +63,10 @@ export default function Page({params}: { params: { coder: number } }) {
     const openModal = () => {
         setIsModalOpen(true);
       };
-    
+
     const closeModal = () => {
         setIsModalOpen(false);
       };
-
     const refresh = () =>{
         window.location.reload();
     }
@@ -160,7 +159,7 @@ export default function Page({params}: { params: { coder: number } }) {
 
         return newColumn;
     };
-
+    //Calls Interpreter and is used to run users code
     const run = ()=>{
 
         /*Create variable to store blocks string content, then stores all blocks in workspace column in blocklist string */
@@ -208,6 +207,13 @@ export default function Page({params}: { params: { coder: number } }) {
                 <Text fontSize="20px" fontWeight={600} color="subtle-text">
             
                 {problem?.prompt} 
+                <div className ="Instructions">
+                    <button onClick={openModal}><p className = "subtle1\1">Click Here For Additonal Instructions</p></button>
+                    <ModalComponent isOpen={isModalOpen} onRequestClose={closeModal}>
+                        
+
+                    </ModalComponent>
+                </div>
                 </Text>
                 <a href="/problems"> Click Here To Go To the Problem Page</a>
                 </Flex>
@@ -232,13 +238,8 @@ export default function Page({params}: { params: { coder: number } }) {
                     
                     </ModalComponent>
                 </div>
-                <button onClick={()=>run()}><p className = "button1">tester</p></button>
                 <div className ="button2">
-
-           
-                <button onClick={refresh}><p className = "subtle">Refresh</p></button>
-    
-
+                    <button onClick={refresh}><p className = "subtle">Refresh</p></button>
                 </div>
             </div>
         </DragDropContext>

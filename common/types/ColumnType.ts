@@ -1,5 +1,5 @@
 export default interface ColumnType {
-    columnsId: number,
+    columnsId: String,
     title: String,
     taskIds: number[],
 }
