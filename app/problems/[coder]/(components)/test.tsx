@@ -4,6 +4,7 @@ import ColumnType from "@/common/types/ColumnType";
 import TaskType from "@/common/types/TaskType";
 import { Draggable } from "react-beautiful-dnd";
 import { Droppable } from "react-beautiful-dnd";
+import { Input } from '@chakra-ui/react'
 
 
 interface PropsType {

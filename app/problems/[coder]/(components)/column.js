@@ -2,6 +2,7 @@ import { Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import { Droppable } from "react-beautiful-dnd";
+import { Input } from '@chakra-ui/react'
 
 const Column = ({ column, tasks }) => {
   return (
@@ -53,6 +54,7 @@ const Column = ({ column, tasks }) => {
                     {...draggableProvided.dragHandleProps}
                   >
                     <Text>{task.content}</Text>
+                    
                   </Flex>
                 )}
               </Draggable>

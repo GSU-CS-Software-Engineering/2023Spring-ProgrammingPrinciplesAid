@@ -10,19 +10,21 @@ import {DragDropContext} from "react-beautiful-dnd";
 import {Flex, Heading, Text} from "@chakra-ui/react";
 import Column from "@/app/problems/[coder]/(components)/column";
 import ModalComponent from '@/app/problems/[coder]/(components)/modal';
-
+import interpreter from '@/app/problems/[coder]/(components)/interpreter/interpreter.js'
+import { Input } from '@chakra-ui/react'
 import {ChakraProvider} from "@chakra-ui/provider";
 import theme from "../theme";
 
 //Loads blocks into array, need to find way to load from server
 const initialData = {
     tasks: {
-        1: {id: 1, content: "String x = ;"},
-        2: {id: 2, content: "Int x = 1;"},
-        3: {id: 3, content: "double x = 1.0;"},
-        4: {id: 4, content: "public static void Main(String[] args)"},
+        1: {id: 1, content: "String x = hello;"},
+        2: {id: 2, content: "int x = 4;"},
+        3: {id: 3, content: "double x = 12"},
+        4: {id: 4, content: "For(int i = 10; i < x;i++)"},
         5: {id: 5, content: "While()"},
-        6: {id: 6, content: "System.out.Print(x);"},
+        6: {id: 6, content: "System.out.println(x);"},
+
     },
     columns: {
         1: {
@@ -47,6 +49,7 @@ export default function Page({params}: { params: { coder: number } }) {
     const [problem, setProblem] = useState<CardResponseType>();
     const [state, setState] = useState<any>(initialData);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [running,setOutput] = useState<any>("");
 
     useEffect(() => {
         getProblemInfo();
@@ -68,6 +71,8 @@ export default function Page({params}: { params: { coder: number } }) {
     const refresh = () =>{
         window.location.reload();
     }
+   
+  
     /*
     This might be implemented in the future just for testing atm
     const getTasks = () => {
@@ -156,6 +161,29 @@ export default function Page({params}: { params: { coder: number } }) {
         return newColumn;
     };
 
+    const run = ()=>{
+
+        /*Create variable to store blocks string content, then stores all blocks in workspace column in blocklist string */
+        var blocklist = '';
+        state.columns[2].taskIds.map((x:number) =>{blocklist += `${state.tasks[x].content}\n`});
+       
+        /*Create undefined since the interpreter needs a second argument and has checks for undefined? */
+
+        /*Creates Interpreter object */
+        let interpreter1 = new interpreter(blocklist, undefined);
+        interpreter1.run();
+
+
+        /*Creating output  */
+        let outputArray = interpreter1.get_output();
+        console.log(outputArray);
+        const outputArray2 = outputArray.toString();
+
+        setOutput(outputArray2);
+        openModal();
+        
+    }
+
     //html code
     return (
     <ChakraProvider theme={theme}>
@@ -195,19 +223,21 @@ export default function Page({params}: { params: { coder: number } }) {
             </Flex>
             <div className="container6">
                 <div className ="button1">
-                    <button onClick={openModal}><p className="subtle">Run</p></button>
+                    <button onClick={run}><p className="subtle">Run</p></button>
                     <ModalComponent isOpen={isModalOpen} onRequestClose={closeModal}>
-                        <div className="modalHeader"><h2>Output:</h2></div>
+                        <div className="modalHeader"><h2>Your Output:{running}</h2></div>
 
-                        <div className = "modalTextAnswer"><p>Incorrect output != {problem?.answer}</p></div>
+                        <div className = "modalTextAnswer"><p>Expected Output = {problem?.answer}</p></div>
                         <div className = 'modalTextEscape'><button onClick={closeModal}>Return to Editor</button></div>
                     
                     </ModalComponent>
                 </div>
+                <button onClick={()=>run()}><p className = "button1">tester</p></button>
                 <div className ="button2">
 
            
                 <button onClick={refresh}><p className = "subtle">Refresh</p></button>
+    
 
                 </div>
             </div>
