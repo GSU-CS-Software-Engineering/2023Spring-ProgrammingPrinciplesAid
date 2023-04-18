@@ -154,7 +154,7 @@ body {
 }
 .popup{
   width: 400px;
-  background: #fff;
+  background: #d13838;
   border-radius: 6px;
   position: absolute;
   top: 0;
@@ -176,6 +176,7 @@ body {
 
 .modalHeader{
   display: flex;
+  color: white;
   justify-content: center;
   align-items: center;
 
@@ -189,7 +190,7 @@ body {
 }
 .modalTextEscape{
   border-radius: 12px;
-  background-color: #132257;
+  background-color: #34343a;
   color: white;
   font-size: 20px;
   text-align: center;

@@ -5,7 +5,7 @@ import { Droppable } from "react-beautiful-dnd";
 
 const Column = ({ column, tasks }) => {
   return (
-    <Flex rounded="3px" bg="column-bg" w="600px" h="620px" flexDir="column">
+    <Flex rounded="20px" bg="column-bg" w="600px" h="620px" flexDir="column">
       <Flex
         align="center"
         h="60px"

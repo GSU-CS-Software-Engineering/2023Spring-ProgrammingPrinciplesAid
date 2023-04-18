@@ -1,5 +1,5 @@
 .main {
-  display: flex;
+  display: fixed;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +19,7 @@
 }
 
 .description a {
-  display: flex;
+  display: fixed;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -213,7 +213,7 @@
 
   .description p,
   .description div {
-    display: flex;
+    display: fixed;
     justify-content: center;
     position: fixed;
     width: 100%;

@@ -20,6 +20,8 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
     padding: '2rem',
     borderRadius: '0.5rem',
+    backgroundColor: 'rgb(42, 46, 56)'
+
 
   }
 };

@@ -23,7 +23,7 @@ const container1 = {
   "width":"15%",
   "height":"78%",
   "margin":"0 auto",
-  "position":"absolute",
+  "position":"fixed",
   "bottom": "0",
   "background-size":"5px solid black",
   "z-index":"1000"
