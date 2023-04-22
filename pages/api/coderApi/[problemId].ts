@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const problems: any = [{
             "problemId": 1,
             "name": 'Initialize Integer',
-            "prompt": 'Displays an integer saved to a variable.',
+            "prompt": 'Displays an integer saved to a variable with the integer value being = 4.',
             "number": '1',
             "code": blockList,
             answer: '4'

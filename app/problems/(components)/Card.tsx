@@ -4,6 +4,8 @@ import Link from "next/link";
 import 'bootstrap/dist/css/bootstrap.css';
 import "../(styles)/cardStyle.css";
 
+//This contains the values that are pulled for the cards
+//These values are from the API in pages/hello.ts
 interface propsType {
     problemId: number;
     name: string;
