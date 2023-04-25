@@ -188,6 +188,14 @@ export default function Page({params}: { params: { coder: number } }) {
     }
 
     //html code
+
+    //removed "instructions to fix spacing:"
+    //<div className ="Instructions">
+    //<button onClick={openModal}><p className = "subtle1\1">Click Here For Additonal Instructions</p></button>
+    //<ModalComponent isOpen={isModalOpen} onRequestClose={closeModal}>
+    //</ModalComponent>
+    //</div>
+
     return (
     <ChakraProvider theme={theme}>
 
@@ -198,7 +206,7 @@ export default function Page({params}: { params: { coder: number } }) {
                 minH="100vh"
                 w="full"
                 color="white-text"
-                pb="2rem"
+                pb="5rem"
             >
            
             <Flex py="4rem" flexDir="column" align="center">
@@ -211,18 +219,12 @@ export default function Page({params}: { params: { coder: number } }) {
                 <Text fontSize="20px" fontWeight={600} color="subtle-text">
             
                 {problem?.prompt} 
-                <div className ="Instructions">
-                    <button onClick={openModal}><p className = "subtle1\1">Click Here For Additonal Instructions</p></button>
-                    <ModalComponent isOpen={isModalOpen} onRequestClose={closeModal}>
-                        
-
-                    </ModalComponent>
-                </div>
+                
                 </Text>
                 <a href="/problems"> Click Here To Go To the Problem Page</a>
                 </Flex>
 
-                <Flex justify="space-between" px="15rem">
+                <Flex justify="space-evenly" px="5rem">
                 {state.columnOrder.map((columnId: number) => {
                     const column = state.columns[columnId];
                     const tasks = column.taskIds.map((taskId: number) => state.tasks[taskId]);

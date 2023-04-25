@@ -2,44 +2,41 @@ body {
     background-color: #132257;
 }
 .container{
-    background-color:#242731;
-    width: 30%; height: 10%; margin: auto;
-    
-    position:absolute; right:35%; bottom:0;
-    background-size: 200px  100%;
-    border: 5px solid black;
-    color:white;
-    z-index:1000;
+  background-color:rgb(28, 32, 32);
+  width: 50%; height: 10%; margin: auto;
+  position:absolute; right:25%; bottom:0;
+  background-size: 200px  100%;
+  border: 3px solid black;
+  color:rgb(47, 28, 155);
+  z-index:1000;
 }
   .buttonRun{
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
+    background-color: white; 
+    color: black; 
+    padding: 28px 56px;
     font-size: 16px;
     margin: 4px 2px;
-    cursor: pointer;
-    float: right;    
+    border: 2px solid #4CAF50;
+    position: absolute;
+    left: 1px; 
 }
   .buttonRun:hover {
-  background-color: #4CAF50;
-  color: white;
+    background-color: #4CAF50;
+    color: white;
 }
   .buttonRefresh{
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    background-color: white; 
+    color: black; 
+    padding: 28px 56px;
     font-size: 16px;
     margin: 4px 2px;
-    cursor: pointer;
+    border: 2px solid red;
+    position: absolute;
+    right: 1px;
     
   }
   .buttonRefresh:hover {
-    background-color: lightcoral;
+    background-color: red;
     color: white;
  
   }
@@ -73,12 +70,19 @@ body {
 }
 .modalTextAnswer{
   
+  color: blue;
   display: flex;
   justify-content: center;
   align-items: center;
 
 }
 .modalTextEscape{
+  border-radius: 12px;
+  background-color: #34343a;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  width: 75%;
   position: fixed;
   left: 50%;
   bottom: 20px;

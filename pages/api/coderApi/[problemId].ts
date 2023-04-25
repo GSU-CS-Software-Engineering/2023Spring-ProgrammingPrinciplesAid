@@ -15,17 +15,41 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             "code": blockList,
             answer: '4'
         }
-            , {"problemId": 2, name: 'Initialize Double', prompt: 'Displays a double saved to a variable.', number: "2" ,"code": blockList}
-            , {"problemId": 3, name: 'Say Hello', prompt: 'Please print "Hello World" to the console.', number: "3" ,"code": blockList}
+            , {"problemId": 2, 
+            name: 'Initialize Double', 
+            prompt: 'Displays a double saved to a variable.', 
+            number: "2" ,"code": blockList, 
+            asnwer:'12.0'
+            }
+            , {"problemId": 3, 
+                name: 'Say Hello', 
+                prompt: 'Please print "Hello World" to the console.', 
+                number: "3" ,
+                "code": blockList, 
+                answer: 'Hello World'
+            }
             , {
                 "problemId": 4,
                 name: 'Count to Three',
-                prompt: 'Please print the numbers 1-3 line-by-line using a for loop.',
+                prompt: 'Please print the numbers 1-5 line-by-line using a for loop.',
                 number: "4"
-                ,"code": blockList
+                ,"code": blockList,
+                answer: '1  2   3   4   5'
             }
-            , {"problemId": 5, name: 'Say Goodbye', prompt: 'Please print "Goodbye World" to the console.', number: "5" ,"code": blockList}
-            , {"problemId": 6, name: 'Nested For Loop', prompt: 'Testing nested for loop.', number: "6" ,"code": blockList}];
+            , {"problemId": 5, 
+            name: 'Say Goodbye', 
+            prompt: 'Please print "Goodbye World" to the console.', 
+            number: "5" ,
+            "code": blockList
+            , answer: 'Goodbye World'
+        }
+            , {"problemId": 6, 
+            name: 'Nested For Loop', 
+            prompt: 'Testing nested for loop.',
+             number: "6" ,
+             "code": blockList
+             , answer: '1,  1 2,    1 2 3,  1 2 3 4,    1 2 3 4 5'
+            }];
 
         res.status(200).json(problems[parseInt(problemId)]);
     }
