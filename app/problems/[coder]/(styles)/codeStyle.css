@@ -1,95 +1,99 @@
 body {
-    background-color: #132257;
+  background-color: #132257;
 }
 .container{
-    background-color:#242731;
-    width: 30%; height: 10%; margin: auto;
-    
-    position:absolute; right:35%; bottom:0;
-    background-size: 200px  100%;
-    border: 5px solid black;
-    color:white;
-    z-index:1000;
+background-color:rgb(28, 32, 32);
+width: 50%; height: 10%; margin: auto;
+position:absolute; right:25%; bottom:0;
+background-size: 200px  100%;
+border: 3px solid black;
+color:rgb(47, 28, 155);
+z-index:1000;
 }
-  .buttonRun{
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    float: right;    
+.buttonRun{
+  background-color: white; 
+  color: black; 
+  padding: 28px 56px;
+  font-size: 16px;
+  margin: 4px 2px;
+  border: 2px solid #4CAF50;
+  position: absolute;
+  left: 1px; 
 }
-  .buttonRun:hover {
+.buttonRun:hover {
   background-color: #4CAF50;
   color: white;
 }
-  .buttonRefresh{
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    
+.buttonRefresh{
+  background-color: white; 
+  color: black; 
+  padding: 28px 56px;
+  font-size: 16px;
+  margin: 4px 2px;
+  border: 2px solid red;
+  position: absolute;
+  right: 1px;
+  
+}
+.buttonRefresh:hover {
+  background-color: red;
+  color: white;
+
+}
+.text-2xl{
+  color:white;
+}
+.header{
+  padding-inline: 20px;
+      padding-left: 30px;
+      text-align: left;
+}
+.drop-zone {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 3px 5px #aaa;
+  margin: 30px;
+  padding: 10px;
+  width: 400px;
+  min-height: 200px;
+  height: auto !important;
   }
-  .buttonRefresh:hover {
-    background-color: lightcoral;
-    color: white;
- 
-  }
-  .text-2xl{
-    color:white;
-  }
-  .header{
-    padding-inline: 20px;
-        padding-left: 30px;
-        text-align: left;
-  }
-  .drop-zone {
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 3px 5px #aaa;
-    margin: 30px;
-    padding: 10px;
-    width: 400px;
-    min-height: 200px;
-    height: auto !important;
-    }
 .inventory-container {
-    width: 500px;
-    display: flex;
-    flex-direction: row;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
 }
 .modalHeader{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 .modalTextAnswer{
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+color: blue;
+display: flex;
+justify-content: center;
+align-items: center;
 
 }
 .modalTextEscape{
-  position: fixed;
-  left: 50%;
-  bottom: 20px;
-  transform: translate(-50%, -50%);
-  margin: 0 auto;
+border-radius: 12px;
+background-color: #34343a;
+color: white;
+font-size: 20px;
+text-align: center;
+width: 75%;
+position: fixed;
+left: 50%;
+bottom: 20px;
+transform: translate(-50%, -50%);
+margin: 0 auto;
 }
 
 .Instructions{
-  text-align: center;
-  color: white;
+text-align: center;
+color: white;
 }
 .Instructions:hover{
-  color: rgb(34, 48, 177)
+color: rgb(34, 48, 177)
 }
